@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: leo-discovery
+server:
+  port: 8011
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8011/eureka/
